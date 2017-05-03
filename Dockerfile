@@ -16,8 +16,7 @@ RUN apk add --no-cache --virtual .build-deps wget gnupg tar && \
     tar -C /usr/src -xzf telegraf-${TELEGRAF_VERSION}_linux_armhf.tar.gz && \
     cp -r /usr/src/telegraf/* / && \
     rm -r /usr/src/telegraf/ && \
-    chmod +x /usr/bin/telegraf && \
-    cp -a /usr/src/telegraf*/* /usr/bin/ && \
+    chmod +x /usr/bin/telegraf  && \
     rm -rf *.tar.gz* /usr/src /root/.gnupg && \
     apk del .build-deps
 
