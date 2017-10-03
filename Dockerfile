@@ -1,11 +1,11 @@
-FROM hypriot/rpi-alpine:3.5
+FROM hypriot/rpi-alpine:3.6
 
 RUN echo 'hosts: files dns' >> /etc/nsswitch.conf
 
 RUN apk add --no-cache iputils ca-certificates && \
     update-ca-certificates
 
-ENV TELEGRAF_VERSION 1.2.1
+ENV TELEGRAF_VERSION 1.4.1
 
 RUN apk add --no-cache --virtual .build-deps wget gnupg tar && \
     gpg --keyserver hkp://ha.pool.sks-keyservers.net \
